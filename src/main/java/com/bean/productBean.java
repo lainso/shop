@@ -5,6 +5,16 @@ public class productBean {
     private String pname;
     private float pprice;
 
+    private String pimg;
+
+    public String getPimg() {
+        return pimg;
+    }
+
+    public void setPimg(String pimg) {
+        this.pimg = pimg;
+    }
+
     public int getPid() {
         return pid;
     }

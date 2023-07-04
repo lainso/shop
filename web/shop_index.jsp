@@ -76,5 +76,16 @@
 	</table>
 </main>
 
+<script>
+    document.querySelector('.click-cus').addEventListener('click', () => {
+        location.href = "./shop_info.jsp"
+    })
+
+    document.querySelector('.side-menu').addEventListener('click', e => {
+        if (e.target.classList.contains('click-cus')) {
+            location.href = "./shop_info.jsp"
+        }
+    })
+</script>
 </body>
 </html>
