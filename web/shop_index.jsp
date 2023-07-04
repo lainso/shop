@@ -40,7 +40,7 @@
 </nav>
 <ul class="side-menu">
 	<!-- <li class="menu-header" style="padding-top: 15px;">操作菜单 👇</li> -->
-	<li class="menu-item click-pro"><i class="iconfont" style="color: orange"">&#xe614;</i></span>订单处理</li>
+	<li class="menu-item click-pro"><i class="iconfont" style="color: orange">&#xe614;</i></span>订单处理</li>
 	<li class=" menu-item click-cus"><i class="iconfont" style="color: orange">&#xf837;</i>店铺信息</li>
 </ul>
 <main>
