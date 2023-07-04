@@ -170,7 +170,7 @@
 
 
     <div class="product">
-        <img src="img/仰望U8.jpg" alt="Product 1">
+        <img src="./static/image/仰望U8.jpg" alt="Product 1">
         <div class="product-info">
             <h3>仰望U8</h3>
             <p>商品描述信息</p>
@@ -180,7 +180,7 @@
     </div>
 
     <div class="product">
-        <img src="img/仰望U8.jpg" alt="Product 2">
+        <img src="./static/image/仰望U8.jpg" alt="Product 2">
         <div class="product-info">
             <h3>仰望U8</h3>
             <p>商品描述信息</p>
@@ -189,7 +189,7 @@
     </div>
 
     <div class="product">
-        <img src="img/海豹.jpg" alt="Product 3">
+        <img src="./static/image/海豹.jpg" alt="Product 3">
         <div class="product-info">
             <h3>海豹</h3>
             <p>商品描述信息</p>
@@ -199,7 +199,7 @@
     </div>
 
     <div class="product">
-        <img src="img/海豹.jpg" alt="Product 4">
+        <img src="./static/image/海豹.jpg" alt="Product 4">
         <div class="product-info">
             <h3>海豹</h3>
             <p>商品描述信息</p>
@@ -209,7 +209,7 @@
     </div>
 
     <div class="product">
-        <img src="img/10pro.png" alt="Product 5">
+        <img src="./static/image/10pro.png" alt="Product 5">
         <div class="product-info">
             <h3>华为nova10pro</h3>
             <p>商品描述信息</p>
@@ -219,7 +219,7 @@
     </div>
 
     <div class="product">
-        <img src="img/10pro.png" alt="Product 6">
+        <img src="./static/image/10pro.png" alt="Product 6">
         <div class="product-info">
             <h3>华为nova10pro</h3>
             <p>商品描述信息</p>
