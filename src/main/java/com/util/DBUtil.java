@@ -6,13 +6,13 @@ import java.sql.SQLException;
 
 public class DBUtil {
     // 连接数据库的用户名
-    public static String username = "lains";
+    public static String username = "shop";
     // 数据库用户密码
-    public static String password = "Lyq123456!!";
+    public static String password = "lingyeqin";
     // 数据库名
-    public static String database = "javaweb";
+    public static String database = "shop";
     // 使用字符串拼接完善连接url
-    public static String url = "jdbc:mysql://localhost:3306/"+database+"?characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false";
+    public static String url = "jdbc:mysql://8.134.179.231:3306/"+database+"?allowPublicKeyRetrieval=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false";
 
     static {
         // 有可能出问题，try...catch保障完备性
@@ -51,4 +51,10 @@ public class DBUtil {
             }
         }
     }
+
+//    public static void main(String[] args) {
+//        Connection con = DBUtil.getCon();
+//        System.out.println(con);
+//        DBUtil.closeDB(con);
+//    }
 }
