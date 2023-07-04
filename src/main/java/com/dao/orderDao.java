@@ -10,9 +10,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class orderDao {
-    public static boolean add(int oid, String otime, long uid, String sname, String olist){
+    public static boolean add(int oid, String otime, long uid, String sname, String olist, String ocondition){
         Connection con = DBUtil.getCon();
-        String sql = "INSERT INTO `shop`.`order` (`oid`, `otime`, `uid`, `sname`, `olist`) VALUES (?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO `shop`.`order` (`oid`, `otime`, `uid`, `sname`, `olist`, `ocondition`) VALUES (?, ?, ?, ?, ?, ?);";
         PreparedStatement ps;
         int sta;
         try {
@@ -22,6 +22,7 @@ public class orderDao {
             ps.setLong(3,uid);
             ps.setString(4,sname);
             ps.setString(5,olist);
+            ps.setString(6,ocondition);
             sta = ps.executeUpdate();
             return sta != 0;
         }catch (SQLException e){
@@ -50,9 +51,9 @@ public class orderDao {
         }
     }
 
-    public static boolean update(String otime, long uid, String sname, String olist, int oid){
+    public static boolean update(String otime, long uid, String sname, String olist, String ocondition, int oid){
         Connection con = DBUtil.getCon();
-        String sql = "UPDATE `shop`.`order` SET `otime`=?, `uid`=?, `sname`=?, `olist`=? WHERE `oid`=?";
+        String sql = "UPDATE `shop`.`order` SET `otime`=?, `uid`=?, `sname`=?, `olist`=?, `ocondition`=? WHERE `oid`=?";
         PreparedStatement ps;
         int sta;
         try {
@@ -61,7 +62,8 @@ public class orderDao {
             ps.setLong(2, uid);
             ps.setString(3, sname);
             ps.setString(4, olist);
-            ps.setInt(5, oid);
+            ps.setString(5, ocondition);
+            ps.setInt(6, oid);
             sta = ps.executeUpdate();
             return sta != 0;
         } catch (SQLException e) {
@@ -75,7 +77,7 @@ public class orderDao {
     public static ArrayList<orderBean> getList(){
         ArrayList<orderBean> tag_array = new ArrayList<>();
         Connection con = DBUtil.getCon();
-        String sql = "SELECT  `oid`,  `otime`,  `uid`,  `sname`, `olist` FROM `shop`.`order`;";
+        String sql = "SELECT * FROM `shop`.`order`;";
         ResultSet rs;
         PreparedStatement ps;
         try {
@@ -88,6 +90,7 @@ public class orderDao {
                 tag.setUid(rs.getLong("uid"));
                 tag.setSname(rs.getString("sname"));
                 tag.setOlist(rs.getString("olist"));
+                tag.setOcondition(rs.getString("ocondition"));
                 tag_array.add(tag);
             }
             rs.close();
@@ -103,12 +106,43 @@ public class orderDao {
     public static ArrayList<orderBean> getList(long uid){
         ArrayList<orderBean> tag_array = new ArrayList<>();
         Connection con = DBUtil.getCon();
-        String sql = "SELECT  `oid`,  `otime`,  `uid`,  `sname`, `olist` FROM `shop`.`order` WHERE uid=?;";
+        String sql = "SELECT * FROM `shop`.`order` WHERE uid=?;";
         ResultSet rs;
         PreparedStatement ps;
         try {
             ps = con.prepareStatement(sql);
             ps.setLong(1,uid);
+            rs = ps.executeQuery();
+            while(rs.next()) {
+                orderBean tag = new orderBean();
+                tag.setOid(rs.getInt("oid"));
+                tag.setOtime(rs.getString("otime"));
+                tag.setUid(rs.getLong("uid"));
+                tag.setSname(rs.getString("sname"));
+                tag.setOlist(rs.getString("olist"));
+                tag.setOcondition(rs.getString("ocondition"));
+                tag_array.add(tag);
+            }
+            rs.close();
+            ps.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            DBUtil.closeDB(con);
+        }
+        return tag_array;
+    }
+
+    public static ArrayList<orderBean> getList(String otime){
+        ArrayList<orderBean> tag_array = new ArrayList<>();
+        Connection con = DBUtil.getCon();
+        String key = "%"+otime+"%";
+        String sql = "SELECT  * FROM `shop`.`order` WHERE otime LIKE ?;";
+        ResultSet rs;
+        PreparedStatement ps;
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setString(1,key);
             rs = ps.executeQuery();
             while(rs.next()) {
                 orderBean tag = new orderBean();

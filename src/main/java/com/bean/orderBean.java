@@ -6,6 +6,20 @@ public class orderBean {
     private long uid;
     private String sname;
     private String olist;
+    private String ocondition;
+
+    public String getOcondition() {
+        return ocondition;
+    }
+
+    public void setOcondition(String ocondition) {
+        if (ocondition.equals("新创建")||ocondition.equals("未支付")||ocondition.equals("已完成")){
+            this.ocondition = ocondition;
+        }else {
+            this.ocondition = "状态错误";
+        }
+
+    }
 
     public int getOid() {
         return oid;

@@ -50,11 +50,11 @@
 
 </ul>
 <main>
-	<div class="menu" style="margin-bottom: 30px;">
+	<form action="ShopQueOrderServlet" class="menu" style="margin-bottom: 30px;">
 		<label style="font-size: 20px;">日期</label>
-		<input type="text" name="data">
+		<input type="text" name="date">
 		<button type="button" class="btn btn-outline-info">查询</button>
-	</div>
+	</form>
 	<table class="table show">
 		<thead>
 		<tr>
