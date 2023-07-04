@@ -6,6 +6,15 @@ public class userBean {
     private String upass;
     private String utel;
     private String utype;
+    private int umoney;
+
+    public int getUmoney() {
+        return umoney;
+    }
+
+    public void setUmoney(int umoney) {
+        this.umoney = umoney;
+    }
 
     public long getUid() {
         return uid;
