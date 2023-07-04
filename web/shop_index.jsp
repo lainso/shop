@@ -53,9 +53,8 @@
 		<thead>
 		<tr>
 			<th scope="col">订单编号</th>
-			<th scope="col">货物名称</th>
-			<th scope="col">订单价格</th>
-			<th scope="col">订单数量</th>
+			<th scope="col">订单时间</th>
+			<th scope="col">购买店铺</th>
 			<th scope="col">订单详情</th>
 		</tr>
 		</thead>
@@ -67,66 +66,9 @@
 			<td>99</td>
 			<td>喝的</td>
 		</tr>
-		<tr>
-			<th scope="row">2</th>
-			<td>橙汁</td>
-			<td>3￥</td>
-			<td>112</td>
-			<td>喝的</td>
-		</tr>
-		<tr>
-			<th scope="row">3</th>
-			<td>椰汁</td>
-			<td>4￥</td>
-			<td>88</td>
-			<td>喝的</td>
-		</tr>
-		<tr>
-			<th scope="row">1</th>
-			<td>可口可乐</td>
-			<td>3￥</td>
-			<td>99</td>
-			<td>喝的</td>
-		</tr>
-		<tr>
-			<th scope="row">1</th>
-			<td>可口可乐</td>
-			<td>3￥</td>
-			<td>99</td>
-			<td>喝的</td>
-		</tr>
-		<tr>
-			<th scope="row">1</th>
-			<td>可口可乐</td>
-			<td>3￥</td>
-			<td>99</td>
-			<td>喝的</td>
-		</tr>
-		<tr>
-			<th scope="row">1</th>
-			<td>可口可乐</td>
-			<td>3￥</td>
-			<td>99</td>
-			<td>喝的</td>
-		</tr>
-		<tr>
-			<th scope="row">1</th>
-			<td>可口可乐</td>
-			<td>3￥</td>
-			<td>99</td>
-			<td>喝的</td>
-		</tr>
-		<tr>
-			<th scope="row">1</th>
-			<td>可口可乐</td>
-			<td>3￥</td>
-			<td>99</td>
-			<td>喝的</td>
-		</tr>
 		</tbody>
 	</table>
 </main>
-
 
 </body>
 </html>
