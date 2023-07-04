@@ -11,11 +11,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>店铺管理</title>
-	<link rel="stylesheet" href="./iconfont/iconfont.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-	      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link href="./static/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="./static/css/store.css">
+	<script src="./static/js/bootstrap.bundle.min.js"></script>
+	<title>店铺管理</title>
 </head>
 <body>
 <div class="nav-logo" style="cursor: pointer;"><i class="iconfont" style="color: blue;">&#xe66f;</i>店铺管理</div>
@@ -168,8 +167,6 @@
 	</div>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/mhDoLbDldZc3qpsJHpLogda//BVZbgYuw6kof4u2FrCedxOtgRZDTHgHUhOCVim"
-        crossorigin="anonymous"></script>
+
 </body>
 </html>
