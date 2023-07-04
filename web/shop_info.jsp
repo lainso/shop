@@ -74,12 +74,12 @@
 
 <script>
   document.querySelector('.click-pro').addEventListener('click', () => {
-    location.href = "./shop_index.jsp"
+    location.href = "shop_index.jsp"
   })
 
   document.querySelector('.side-menu').addEventListener('click', e => {
     if (e.target.classList.contains('click-pro')) {
-      location.href = "./shop_index.jsp"
+      location.href = "shop_index.jsp"
     }
   })
 </script>
