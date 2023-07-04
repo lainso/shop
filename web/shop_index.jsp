@@ -46,8 +46,9 @@
 </ul>
 <main>
 	<div class="menu" style="margin-bottom: 30px;">
+		<div class="btn btn-outline-info disabled" role="button" aria-disabled="true">日期</div>
+		<input type="text" name="data">
 		<button type="button" class="btn btn-outline-info">查询</button>
-		<button type="button" class="btn btn-outline-info">添加</button>
 	</div>
 	<table class="table show">
 		<thead>
