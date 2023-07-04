@@ -14,7 +14,7 @@
 	<link href="./static/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="./static/css/store.css">
 	<script src="./static/js/bootstrap.bundle.min.js"></script>
-	<title>店铺管理</title>
+	<title>店铺主页</title>
 </head>
 <body>
 <div class="nav-logo" style="cursor: pointer;"><i class="iconfont" style="color: blue;">&#xe66f;</i>店铺管理</div>
