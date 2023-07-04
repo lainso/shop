@@ -31,7 +31,7 @@
 	</ol>
 
 	<ol class="nav-bar" style="margin-left: auto; margin-right:1.5rem">
-		<li class="top-bar top-right"><span>🙍‍♂️ 管理员</span>
+		<li class="top-bar top-right"><span>🙍‍♂️ 店家版</span>
 			<ul class="drop-menu hidden" style="right:0;">
 				<li class="drop-item click-mgr">📰 账号管理</li>
 				<div class="line"></div>
