@@ -202,10 +202,5 @@
 
 </section>
 </body>
-<script>
-    function exit(){
-        document.location.href = "LogoutServlet";
-    }
-</script>
 </html>
 
