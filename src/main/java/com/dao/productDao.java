@@ -74,7 +74,7 @@ public class productDao {
     public static ArrayList<productBean> getList(){
         ArrayList<productBean> tag_array = new ArrayList<>();
         Connection con = DBUtil.getCon();
-        String sql = "SELECT  `pid`,  `pname`, `pprice`, `pimg` FROM `shop`.`product`;";
+        String sql = "SELECT  `pid`,  `pname`, `pprice`, `pimg`, `pclass` FROM `shop`.`product`;";
         ResultSet rs;
         PreparedStatement ps;
         try {
@@ -86,6 +86,7 @@ public class productDao {
                 tag.setPname(rs.getString("pname"));
                 tag.setPprice(rs.getLong("pprice"));
                 tag.setPimg(rs.getString("pimg"));
+                tag.setPclass(rs.getString("pclass"));
                 tag_array.add(tag);
             }
             rs.close();

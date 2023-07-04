@@ -95,12 +95,11 @@
             height: 20px;
             margin-right: 2px;
         }
-        /*.product-info {*/
-        /*    text-align: left;*/
-        /*    position: absolute;*/
-        /*    top: 0;*/
-        /*    left: 210px;*/
-        /*}*/
+        .product-info {
+            position: relative;
+            bottom: 0;
+            left: 130px;
+        }
 
         .login-form {
             text-align: center;
@@ -143,9 +142,9 @@
     }else {
     %>
     <font style="position: absolute;right: 230px;top: 6px">欢迎 <strong style="color: gray;font-size: 14px"><%=session.getAttribute("uuid")%></strong>, 光临</font>
-<%--    <a href="LogoutServlet"><span style="position: absolute;right: 170px;top: 6px;color: darkred">退出</span></a>--%>
+    <a href="logout.jsp"><span style="position: absolute;right: 170px;top: 6px;color: darkred">退出</span></a>
 
-    <button onclick="exit()" style="position: absolute;right: 170px;top: 6px;color: darkred"> 退出 </button>
+<%--    <button onclick="exit()" style="position: absolute;right: 170px;top: 6px;color: darkred"> 退出 </button>--%>
     <ul>
         <a href="cart.jsp"> <li style="position: absolute;right: 50px;top: 6px"><span style="color: blue">我的购物车</span>  </li></a>
     </ul>
@@ -162,11 +161,14 @@
         <li>|</li>
         <a href="#"><li>服装</li></a>
         <li>|</li>
-        <a href="#"><li>电子产品</li></a>
+        <a href="#"><li>美食</li></a>
+        <li>|</li>
+        <a href="#"><li>数码</li></a>
         <li>|</li>
         <a href="#"><li>家居</li></a>
         <li>|</li>
         <a href="#"><li>美妆</li></a>
+
 
     </ul>
 </nav>
@@ -188,24 +190,21 @@
     %>
     <div class="product">
         <img src="<%=p.getPimg()%>" id="img1">
-        <div class="product-info">
+
             <h3><%=p.getPname()%></h3>
             <h2>¥<%=p.getPprice()%></h2>
+<%--        <h3><%=p.getPid()%></h3>--%>
 
-        </div>
 
+        <div class="product-info">
         <a href="#"><img src="https://bpic.588ku.com/element_origin_min_pic/19/06/15/e6a3b7c7bfb6b6d595be46723f5c81a7.jpg" id="img2" >添加到购物车</a>
-    </div>
+        </div>
+        </div>
         <%}%>
 
 
 
 </section>
 </body>
-<script>
-    function exit(){
-        document.location.href = "LogoutServlet";
-    }
-</script>
 </html>
 
