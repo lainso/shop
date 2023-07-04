@@ -304,3 +304,10 @@ button {
 .info {
   margin-top: 10rem;
 }
+
+input[name=data] {
+  margin-left: 1rem;
+  height: 30px;
+  border-radius: 8px;
+  color: green
+}

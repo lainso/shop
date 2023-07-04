@@ -46,8 +46,9 @@
 </ul>
 <main>
 	<div class="menu" style="margin-bottom: 30px;">
+		<label style="font-size: 20px;">日期</label>
+		<input type="text" name="data">
 		<button type="button" class="btn btn-outline-info">查询</button>
-		<button type="button" class="btn btn-outline-info">添加</button>
 	</div>
 	<table class="table show">
 		<thead>
