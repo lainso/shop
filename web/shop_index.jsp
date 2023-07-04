@@ -9,7 +9,6 @@
 <%@ page import="main.java.com.bean.orderBean" %>
 <%@ page import="main.java.com.dao.orderDao" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="main.java.com.dao.userDao" %>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -42,7 +41,6 @@
 	</ol>
 </nav>
 <ul class="side-menu">
-	<!-- <li class="menu-header" style="padding-top: 15px;">操作菜单 👇</li> -->
 	<li class="menu-item click-pro"><i class="iconfont" style="color: orange">&#xe614;</i>订单处理</li>
 	<li class=" menu-item click-cus"><i class="iconfont" style="color: orange">&#xf837;</i>店铺信息</li>
 </ul>
