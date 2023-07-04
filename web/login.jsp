@@ -59,7 +59,7 @@
 <body>
 <div id="box">
     <form action="LoginServlet" method="post">
-        <h2>用户登录</h2>
+        <h2>会员登录</h2>
         <input type="text" placeholder="请输入用户名" name="uid" required>
         <br>
         <input type="password" placeholder="请输入密码" name="upass" required>

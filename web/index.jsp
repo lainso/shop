@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="main.java.com.bean.productBean" %>
+<%@ page import="main.java.com.dao.productDao" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,37 +62,45 @@
             border-radius: 18px 18px 18px 18px;
             position: relative;
             padding: 20px;
-            text-align: center;
+            /*text-align: center;*/
         }
 
 
         .product {
             display: inline-block;
-            width: 300px;
-            margin: 20px;
+            /*width: 160px;*/
+            margin: 5px;
             padding: 10px;
             border: 1px solid white;
             background-color: rgb(247,249,250);
             border-radius: 12px;
-            position: relative;
+            /*position: relative;*/
         }
         .product:hover{
             border: 1px solid orange;
         }
 
-        .product img {
-            width: 150px;
-            height: 150px;
+        #img1 {
+            width: 260px;
+            height: 260px;
             margin-bottom: 10px;
             border-radius: 5px;
             left: 10px;
         }
-        .product-info {
-            text-align: left;
-            position: absolute;
-            top: 0;
-            left: 210px;
+        h2{
+            color: #ff5000;
         }
+        #img2 {
+            width: 20px;
+            height: 20px;
+            margin-right: 2px;
+        }
+        /*.product-info {*/
+        /*    text-align: left;*/
+        /*    position: absolute;*/
+        /*    top: 0;*/
+        /*    left: 210px;*/
+        /*}*/
 
         .login-form {
             text-align: center;
@@ -132,8 +143,9 @@
     }else {
     %>
     <font style="position: absolute;right: 230px;top: 6px">欢迎 <strong style="color: gray;font-size: 14px"><%=session.getAttribute("uuid")%></strong>, 光临</font>
-    <a href="LogoutServlet"><span style="position: absolute;right: 170px;top: 6px;color: darkred">退出</span></a>
-<%--    <button onclick="exit()" style="position: absolute;right: 170px;top: 6px;color: darkred"> 退出 </button>--%>
+<%--    <a href="LogoutServlet"><span style="position: absolute;right: 170px;top: 6px;color: darkred">退出</span></a>--%>
+
+    <button onclick="exit()" style="position: absolute;right: 170px;top: 6px;color: darkred"> 退出 </button>
     <ul>
         <a href="cart.jsp"> <li style="position: absolute;right: 50px;top: 6px"><span style="color: blue">我的购物车</span>  </li></a>
     </ul>
@@ -169,66 +181,22 @@
 
 <section>
 
+    <%
 
+        ArrayList<productBean> pList = productDao.getList();
+        for (productBean p : pList){
+    %>
     <div class="product">
-        <img src="./static/image/仰望U8.jpg" alt="Product 1">
+        <img src="<%=p.getPimg()%>" id="img1">
         <div class="product-info">
-            <h3>仰望U8</h3>
-            <p>商品描述信息</p>
+            <h3><%=p.getPname()%></h3>
+            <h2>¥<%=p.getPprice()%></h2>
 
         </div>
-        <a href="#">添加到购物车</a>
+
+        <a href="#"><img src="https://bpic.588ku.com/element_origin_min_pic/19/06/15/e6a3b7c7bfb6b6d595be46723f5c81a7.jpg" id="img2" >添加到购物车</a>
     </div>
-
-    <div class="product">
-        <img src="./static/image/仰望U8.jpg" alt="Product 2">
-        <div class="product-info">
-            <h3>仰望U8</h3>
-            <p>商品描述信息</p>
-        </div>
-        <a href="#">添加到购物车</a>
-    </div>
-
-    <div class="product">
-        <img src="./static/image/海豹.jpg" alt="Product 3">
-        <div class="product-info">
-            <h3>海豹</h3>
-            <p>商品描述信息</p>
-
-        </div>
-        <a href="#">添加到购物车</a>
-    </div>
-
-    <div class="product">
-        <img src="./static/image/海豹.jpg" alt="Product 4">
-        <div class="product-info">
-            <h3>海豹</h3>
-            <p>商品描述信息</p>
-
-        </div>
-        <a href="#">添加到购物车</a>
-    </div>
-
-    <div class="product">
-        <img src="./static/image/10pro.png" alt="Product 5">
-        <div class="product-info">
-            <h3>华为nova10pro</h3>
-            <p>商品描述信息</p>
-
-        </div>
-        <a href="#">添加到购物车</a>
-    </div>
-
-    <div class="product">
-        <img src="./static/image/10pro.png" alt="Product 6">
-        <div class="product-info">
-            <h3>华为nova10pro</h3>
-            <p>商品描述信息</p>
-
-        </div>
-        <a href="#">添加到购物车</a>
-    </div>
-
+        <%}%>
 
 
 
