@@ -41,8 +41,13 @@
 	</ol>
 </nav>
 <ul class="side-menu">
-	<li class="menu-item click-pro"><i class="iconfont" style="color: orange">&#xe614;</i>订单处理</li>
-	<li class=" menu-item click-cus"><i class="iconfont" style="color: orange">&#xf837;</i>店铺信息</li>
+	<!-- <li class="menu-header" style="padding-top: 15px;">操作菜单 👇</li> -->
+	<li class="menu-item click-pro"><span><i class="iconfont" style="color: orange">&#xe614;</i>订单处理</span> </li>
+	<li class="menu-item click-cus">
+		<span><i class="iconfont" style="color: orange">&#xf837;</i>店铺信息</span>
+	</li>
+	<li class="menu-item click-quit"><span><i class="iconfont" style="color: orange">&#xe669;</i>退出登录</span> </li>
+
 </ul>
 <main>
 	<div class="menu" style="margin-bottom: 30px;">
