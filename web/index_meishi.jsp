@@ -124,36 +124,36 @@
     </style>
 </head>
 <body>
-
+<%String classess ="";%>
 <header>
-<div class="box13">
-    <h2 style="color: white">网上商城</h2>
+    <div class="box13">
+        <h2 style="color: white">网上商城</h2>
 
 
-    <%
-        if (session.getAttribute("uuid")==null){
-    %>
-    <font style="position: absolute;right: 220px;top: 6px">欢迎光临，请<a href="login.jsp" style="color: gray">登录</a> </font>
-    <ul>
-        <a href="regist.jsp"> <li style="position: absolute;right: 130px;top: 6px"><span style="color: blue">立即注册</span>  </li></a>
-    </ul>
+        <%
+            if (session.getAttribute("uuid")==null){
+        %>
+        <font style="position: absolute;right: 220px;top: 6px">欢迎光临，请<a href="login.jsp" style="color: gray">登录</a> </font>
+        <ul>
+            <a href="regist.jsp"> <li style="position: absolute;right: 130px;top: 6px"><span style="color: blue">立即注册</span>  </li></a>
+        </ul>
 
-    <%
-    }else {
-    %>
-    <font style="position: absolute;right: 230px;top: 6px">欢迎 <strong style="color: gray;font-size: 14px"><%=session.getAttribute("uuid")%></strong>, 光临</font>
-    <a href="logout.jsp"><span style="position: absolute;right: 170px;top: 6px;color: darkred">退出</span></a>
+        <%
+        }else {
+        %>
+        <font style="position: absolute;right: 230px;top: 6px">欢迎 <strong style="color: gray;font-size: 14px"><%=session.getAttribute("uuid")%></strong>, 光临</font>
+        <a href="logout.jsp"><span style="position: absolute;right: 170px;top: 6px;color: darkred">退出</span></a>
 
-<%--    <button onclick="exit()" style="position: absolute;right: 170px;top: 6px;color: darkred"> 退出 </button>--%>
-    <ul>
-        <a href="cart.jsp"> <li style="position: absolute;right: 50px;top: 6px"><span style="color: blue">我的购物车</span>  </li></a>
-    </ul>
-    <%}%>
-
-
+        <%--    <button onclick="exit()" style="position: absolute;right: 170px;top: 6px;color: darkred"> 退出 </button>--%>
+        <ul>
+            <a href="cart.jsp"> <li style="position: absolute;right: 50px;top: 6px"><span style="color: blue">我的购物车</span>  </li></a>
+        </ul>
+        <%}%>
 
 
-</div>
+
+
+    </div>
 </header>
 <nav>
     <ul>
@@ -165,7 +165,7 @@
         <li>|</li>
         <a href="index_shuma.jsp"><li>数码</li></a>
         <li>|</li>
-        <a href="index_jiaju.jsp"><li>居家</li></a>
+        <a href="index_jujia.jsp"><li>居家</li></a>
         <li>|</li>
         <a href="index_meizhuang.jsp"><li>美妆</li></a>
     </ul>
@@ -185,21 +185,23 @@
 
         ArrayList<productBean> pList = productDao.getList();
         for (productBean p : pList){
+            if (p.getPclass().equals("美食")){
     %>
 
     <div class="product">
         <img src="<%=p.getPimg()%>" id="img1">
 
-            <h3><%=p.getPname()%></h3>
-            <h2>¥<%=p.getPprice()%></h2>
-<%--        <h3><%=p.getPid()%></h3>--%>
+        <h3><%=p.getPname()%></h3>
+        <h2>¥<%=p.getPprice()%></h2>
+        <%--        <h3><%=p.getPid()%></h3>--%>
 
 
         <div class="product-info">
-        <a href="#"><img src="https://bpic.588ku.com/element_origin_min_pic/19/06/15/e6a3b7c7bfb6b6d595be46723f5c81a7.jpg" id="img2" >添加到购物车</a>
+            <a href="#"><img src="https://bpic.588ku.com/element_origin_min_pic/19/06/15/e6a3b7c7bfb6b6d595be46723f5c81a7.jpg" id="img2" >添加到购物车</a>
         </div>
-        </div>
-        <%}%>
+    </div>
+    <%}
+    }%>
 
 
 
