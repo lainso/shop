@@ -52,9 +52,9 @@ public class DBUtil {
         }
     }
 
-    public static void main(String[] args) {
-        Connection con = DBUtil.getCon();
-        System.out.println(con);
-        DBUtil.closeDB(con);
-    }
+//    public static void main(String[] args) {
+//        Connection con = DBUtil.getCon();
+//        System.out.println(con);
+//        DBUtil.closeDB(con);
+//    }
 }
