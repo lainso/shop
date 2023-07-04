@@ -49,6 +49,6 @@ public class LogoutServlet extends HttpServlet {
         }
 
         // 重定向到 login.jsp 页面
-        response.sendRedirect(request.getContextPath() + "/login.jsp"); // 使用context path来避免硬编码
+        response.sendRedirect("./index.jsp"); // 使用context path来避免硬编码
     }
 }

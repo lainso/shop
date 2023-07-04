@@ -132,7 +132,8 @@
     }else {
     %>
     <font style="position: absolute;right: 230px;top: 6px">欢迎 <strong style="color: gray;font-size: 14px"><%=session.getAttribute("uuid")%></strong>, 光临</font>
-    <button onclick="exit()" style="position: absolute;right: 170px;top: 6px;color: darkred"> 退出 </button>
+    <a href="LogoutServlet"><span style="position: absolute;right: 170px;top: 6px;color: darkred">退出</span></a>
+<%--    <button onclick="exit()" style="position: absolute;right: 170px;top: 6px;color: darkred"> 退出 </button>--%>
     <ul>
         <a href="cart.jsp"> <li style="position: absolute;right: 50px;top: 6px"><span style="color: blue">我的购物车</span>  </li></a>
     </ul>
