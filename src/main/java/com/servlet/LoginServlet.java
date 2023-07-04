@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute("uuid", uid2);
             response.sendRedirect("user_index.jsp");
         } else {
-            response.sendRedirect("user_index.jsp");
+            response.sendRedirect("login.jsp");
         }
     }
 }
