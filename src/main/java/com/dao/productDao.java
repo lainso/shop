@@ -11,9 +11,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class productDao {
-    public static boolean add(int pid, String pname, float pprice){
+    public static boolean add(int pid, String pname, float pprice, String pimg){
         Connection con = DBUtil.getCon();
-        String sql = "INSERT INTO `shop`.`product` (`pid`, `pname`, `pprice`) VALUES (?, ?, ?);";
+        String sql = "INSERT INTO `shop`.`product` (`pid`, `pname`, `pprice`, `pimg`) VALUES (?, ?, ?, ?);";
         PreparedStatement ps;
         int sta;
         try {
@@ -21,6 +21,7 @@ public class productDao {
             ps.setInt(1, pid);
             ps.setString(2,pname);
             ps.setFloat(3,pprice);
+            ps.setString(4,pimg);
             sta = ps.executeUpdate();
             return sta != 0;
         }catch (SQLException e){
@@ -49,16 +50,17 @@ public class productDao {
         }
     }
 
-    public static boolean update(String pname, float pprice,int pid){
+    public static boolean update(String pname, float pprice, String pimg, int pid){
         Connection con = DBUtil.getCon();
-        String sql = "UPDATE `shop`.`product` SET `pname`=?, `pprice`=? WHERE `pid`=?";
+        String sql = "UPDATE `shop`.`product` SET `pname`=?, `pprice`=?, `pimg`=? WHERE `pid`=?";
         PreparedStatement ps;
         int sta;
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, pname);
             ps.setFloat(2, pprice);
-            ps.setInt(3, pid);
+            ps.setString(3, pimg);
+            ps.setInt(4, pid);
             sta = ps.executeUpdate();
             return sta != 0;
         } catch (SQLException e) {
@@ -72,7 +74,7 @@ public class productDao {
     public static ArrayList<productBean> getList(){
         ArrayList<productBean> tag_array = new ArrayList<>();
         Connection con = DBUtil.getCon();
-        String sql = "SELECT  `pid`,  `pname`,  `pprice` FROM `shop`.`product`;";
+        String sql = "SELECT  `pid`,  `pname`, `pprice`, `pimg` FROM `shop`.`product`;";
         ResultSet rs;
         PreparedStatement ps;
         try {
@@ -83,6 +85,7 @@ public class productDao {
                 tag.setPid(rs.getInt("pid"));
                 tag.setPname(rs.getString("pname"));
                 tag.setPprice(rs.getLong("pprice"));
+                tag.setPimg(rs.getString("pimg"));
                 tag_array.add(tag);
             }
             rs.close();
@@ -98,7 +101,7 @@ public class productDao {
     public static ArrayList<productBean> getList(int pid){
         ArrayList<productBean> tag_array = new ArrayList<>();
         Connection con = DBUtil.getCon();
-        String sql = "SELECT  `pid`,  `pname`,  `pprice` FROM `shop`.`product` WHERE pid=?;";
+        String sql = "SELECT  `pid`,  `pname`, `pprice`, `pimg` FROM `shop`.`product` WHERE pid=?;";
         ResultSet rs;
         PreparedStatement ps;
         try {
@@ -110,6 +113,7 @@ public class productDao {
                 tag.setPid(rs.getInt("pid"));
                 tag.setPname(rs.getString("pname"));
                 tag.setPprice(rs.getLong("pprice"));
+                tag.setPimg(rs.getString("pimg"));
                 tag_array.add(tag);
             }
             rs.close();
