@@ -7,6 +7,8 @@ public class productBean {
 
     private String pimg;
 
+    private String pclass;
+
     public String getPimg() {
         return pimg;
     }
@@ -38,4 +40,13 @@ public class productBean {
     public void setPprice(float pprice) {
         this.pprice = pprice;
     }
+
+    public String getPclass() {
+        return pclass;
+    }
+
+    public void setPclass(String pclass) {
+        this.pclass = pclass;
+    }
+
 }

@@ -161,11 +161,14 @@
         <li>|</li>
         <a href="#"><li>服装</li></a>
         <li>|</li>
-        <a href="#"><li>电子产品</li></a>
+        <a href="#"><li>美食</li></a>
+        <li>|</li>
+        <a href="#"><li>数码</li></a>
         <li>|</li>
         <a href="#"><li>家居</li></a>
         <li>|</li>
         <a href="#"><li>美妆</li></a>
+
 
     </ul>
 </nav>
@@ -190,6 +193,7 @@
 
             <h3><%=p.getPname()%></h3>
             <h2>¥<%=p.getPprice()%></h2>
+<%--        <h3><%=p.getPid()%></h3>--%>
 
 
         <div class="product-info">
