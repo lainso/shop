@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
         } else if(user){
             request.getSession().setAttribute("identity", "USER");
             request.getSession().setAttribute("uuid", uid2);
-            response.sendRedirect("user_index.jsp");
+            response.sendRedirect("index.jsp");
         } else {
             response.sendRedirect("login.jsp");
         }

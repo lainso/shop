@@ -121,7 +121,7 @@
 
 
     <%
-        if (session.getAttribute("username")==null){
+        if (session.getAttribute("uuid")==null){
     %>
     <font style="position: absolute;right: 220px;top: 6px">欢迎光临，请<a href="login.jsp" style="color: gray">登录</a> </font>
     <ul>
@@ -131,8 +131,8 @@
     <%
     }else {
     %>
-    <font style="position: absolute;right: 230px;top: 6px">欢迎 <strong style="color: gray;font-size: 14px"><%=session.getAttribute("username")%></strong>, 光临</font>
-    <a href="login.jsp"> <li style="position: absolute;right: 170px;top: 6px"><span style="color: darkred">退出</span>  </li></a>
+    <font style="position: absolute;right: 230px;top: 6px">欢迎 <strong style="color: gray;font-size: 14px"><%=session.getAttribute("uuid")%></strong>, 光临</font>
+    <button onclick="exit()" style="position: absolute;right: 170px;top: 6px;color: darkred"> 退出 </button>
     <ul>
         <a href="cart.jsp"> <li style="position: absolute;right: 50px;top: 6px"><span style="color: blue">我的购物车</span>  </li></a>
     </ul>
@@ -233,5 +233,10 @@
 
 </section>
 </body>
+<script>
+    function exit(){
+        document.location.href = "LogoutServlet";
+    }
+</script>
 </html>
 
