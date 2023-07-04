@@ -52,7 +52,6 @@
 	</ol>
 </nav>
 <ul class="side-menu">
-	<!-- <li class="menu-header" style="padding-top: 15px;">操作菜单 👇</li> -->
 	<li class="menu-item click-pro"><i class="iconfont" style="color: #000;">&#xe6a3;</i></span>商品</li>
 	<li class="menu-item click-cus"><i class="iconfont">&#xe600;</i>分类</li>
 	<li class="menu-item openable side-bar"><i class="iconfont">&#xeb36;</i>渠道
