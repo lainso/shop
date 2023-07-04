@@ -6,7 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page import="main.java.com.bean.orderBean" %>
+<%@ page import="main.java.com.dao.orderDao" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="main.java.com.dao.userDao" %>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -40,7 +43,7 @@
 </nav>
 <ul class="side-menu">
 	<!-- <li class="menu-header" style="padding-top: 15px;">操作菜单 👇</li> -->
-	<li class="menu-item click-pro"><i class="iconfont" style="color: orange">&#xe614;</i></span>订单处理</li>
+	<li class="menu-item click-pro"><i class="iconfont" style="color: orange">&#xe614;</i>订单处理</li>
 	<li class=" menu-item click-cus"><i class="iconfont" style="color: orange">&#xf837;</i>店铺信息</li>
 </ul>
 <main>
@@ -48,7 +51,6 @@
 		<button type="button" class="btn btn-outline-info">查询</button>
 		<button type="button" class="btn btn-outline-info">添加</button>
 	</div>
-
 	<table class="table show">
 		<thead>
 		<tr>
@@ -59,13 +61,19 @@
 		</tr>
 		</thead>
 		<tbody>
+		<%
+			String uid2 = (String) session.getAttribute("uuid");
+			long uid = Long.parseLong(uid2);
+			ArrayList<orderBean> orderList = orderDao.getList(uid);
+			for (orderBean o : orderList){
+		%>
 		<tr>
-			<th scope="row">1</th>
-			<td>可口可乐</td>
-			<td>3￥</td>
-			<td>99</td>
-			<td>喝的</td>
+			<th scope="row"><%=o.getOid()%></th>
+			<td><%=o.getOtime()%></td>
+			<td><%=o.getSname()%></td>
+			<td><%=o.getOlist()%></td>
 		</tr>
+		<%}%>
 		</tbody>
 	</table>
 </main>

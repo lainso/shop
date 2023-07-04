@@ -100,7 +100,7 @@ public class orderDao {
         return tag_array;
     }
 
-    public static ArrayList<orderBean> getList(int uid){
+    public static ArrayList<orderBean> getList(long uid){
         ArrayList<orderBean> tag_array = new ArrayList<>();
         Connection con = DBUtil.getCon();
         String sql = "SELECT  `oid`,  `otime`,  `uid`,  `sname`, `olist` FROM `shop`.`order` WHERE uid=?;";
