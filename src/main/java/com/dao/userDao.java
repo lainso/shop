@@ -10,9 +10,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class userDao {
-    public static boolean add(long uid, String uname, String upass, String utel, String utype){
+    public static boolean add(long uid, String uname, String upass, String utel, String utype, int umoney){
         Connection con = DBUtil.getCon();
-        String sql = "INSERT INTO `shop`.`user` (`uid`, `uname`, `upass`, `utel`, `utype`) VALUES (?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO `shop`.`user` (`uid`, `uname`, `upass`, `utel`, `utype`, `umoney`) VALUES (?, ?, ?, ?, ?, ?);";
         PreparedStatement ps;
         int sta;
         try {
@@ -22,6 +22,7 @@ public class userDao {
             ps.setString(3,upass);
             ps.setString(4,utel);
             ps.setString(5,utype);
+            ps.setInt(6,umoney);
             sta = ps.executeUpdate();
             return sta != 0;
         }catch (SQLException e){
@@ -50,9 +51,9 @@ public class userDao {
         }
     }
 
-    public static boolean update(String uname, String upass, String utel, String utype, long uid){
+    public static boolean update(String uname, String upass, String utel, String utype, int umoney, long uid){
         Connection con = DBUtil.getCon();
-        String sql = "UPDATE `shop`.`user` SET `uname`=?, `upass`=?, `utel`=?, `utype`=? WHERE `uid`=?";
+        String sql = "UPDATE `shop`.`user` SET `uname`=?, `upass`=?, `utel`=?, `utype`=?, `umoney`=? WHERE `uid`=?";
         PreparedStatement ps;
         int sta;
         try {
@@ -62,6 +63,7 @@ public class userDao {
             ps.setString(3, utel);
             ps.setString(4, utype);
             ps.setLong(5, uid);
+            ps.setInt(6,umoney);
             sta = ps.executeUpdate();
             return sta != 0;
         } catch (SQLException e) {
@@ -75,7 +77,7 @@ public class userDao {
     public static ArrayList<userBean> getList(){
         ArrayList<userBean> tag_array = new ArrayList<>();
         Connection con = DBUtil.getCon();
-        String sql = "SELECT `uid`,  `uname`,  `upass`,  `utel`, `utype` FROM `shop`.`user`;";
+        String sql = "SELECT `uid`,  `uname`,  `upass`,  `utel`, `utype`, `umoney` FROM `shop`.`user`;";
         ResultSet rs;
         PreparedStatement ps;
         try {
@@ -88,6 +90,7 @@ public class userDao {
                 tag.setUpass(rs.getString("upass"));
                 tag.setUtel(rs.getString("utel"));
                 tag.setUtype(rs.getString("utype"));
+                tag.setUmoney(rs.getInt("umoney"));
                 tag_array.add(tag);
             }
             rs.close();
@@ -103,7 +106,7 @@ public class userDao {
     public static ArrayList<userBean> getList(int uid){
         ArrayList<userBean> tag_array = new ArrayList<>();
         Connection con = DBUtil.getCon();
-        String sql = "SELECT  `uid`,  `uname`,  `upass`,  `utel`, `utype` FROM `shop`.`user` WHERE uid=?;";
+        String sql = "SELECT  `uid`,  `uname`,  `upass`,  `utel`, `utype`, `umoney` FROM `shop`.`user` WHERE uid=?;";
         ResultSet rs;
         PreparedStatement ps;
         try {
@@ -117,6 +120,7 @@ public class userDao {
                 tag.setUpass(rs.getString("upass"));
                 tag.setUtel(rs.getString("utel"));
                 tag.setUtype(rs.getString("utype"));
+                tag.setUmoney(rs.getInt("umoney"));
                 tag_array.add(tag);
             }
             rs.close();
