@@ -1,13 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: lains
+  Date: 2023/7/4
+  Time: 14:55
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="./static/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="./static/css/store.css">
 	<script src="./static/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="./static/css/store.css">
 	<title>店铺管理</title>
 </head>
 
@@ -33,7 +40,7 @@
 </nav>
 <ul class="side-menu">
 	<!-- <li class="menu-header" style="padding-top: 15px;">操作菜单 👇</li> -->
-	<li class="menu-item click-pro"><i class="iconfont" style="color: orange">&#xe614;</i></span>订单处理</li>
+	<li class="menu-item click-pro"><i class="iconfont" style="color: orange"">&#xe614;</i></span>订单处理</li>
 	<li class=" menu-item click-cus"><i class="iconfont" style="color: orange">&#xf837;</i>店铺信息</li>
 </ul>
 <main>
@@ -122,5 +129,4 @@
 
 
 </body>
-
 </html>
