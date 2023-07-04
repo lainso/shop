@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'iconfont';
   /* Project id 4109966 */
-  src: url('//at.alicdn.com/t/c/font_4109966_21vns1c06lf.woff2?t=1688403525473') format('woff2'),
-  url('//at.alicdn.com/t/c/font_4109966_21vns1c06lf.woff?t=1688403525473') format('woff'),
-  url('//at.alicdn.com/t/c/font_4109966_21vns1c06lf.ttf?t=1688403525473') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_4109966_6x4t4emry9e.woff2?t=1688466257940') format('woff2'),
+  url('//at.alicdn.com/t/c/font_4109966_6x4t4emry9e.woff?t=1688466257940') format('woff'),
+  url('//at.alicdn.com/t/c/font_4109966_6x4t4emry9e.ttf?t=1688466257940') format('truetype');
 }
 
 .iconfont {
@@ -70,6 +70,9 @@ body {
   font-size: 16px;
 }
 
+.side-menu .menu-item span:hover {
+  color: skyblue;
+}
 
 /* 边框 */
 /* .openable {
@@ -310,4 +313,8 @@ input[name=data] {
   height: 30px;
   border-radius: 8px;
   color: green
+}
+
+.click-quit {
+  margin-top: 210px;
 }
