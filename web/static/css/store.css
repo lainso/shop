@@ -70,9 +70,6 @@ body {
   font-size: 16px;
 }
 
-.side-menu .menu-item:hover {
-  background-color: #f0fcff;
-}
 
 /* 边框 */
 /* .openable {
@@ -279,6 +276,7 @@ button {
 
 .my-item-head {
   margin-left: 10%;
+  padding-top: 6px;
   display: inline-block;
   width: 7rem;
   color: rgb(27, 112, 250);
@@ -301,4 +299,8 @@ button {
   padding: .5rem 2rem;
   background-color: rgb(200, 252, 227);
   border-radius: 20px;
+}
+
+.info {
+  margin-top: 10rem;
 }
